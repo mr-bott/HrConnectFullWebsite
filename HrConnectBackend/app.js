@@ -12,7 +12,8 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 const app = express();
-
+let a="apple"
+console.log(a)
 app.use(cors({
    origin: 'https://hr-connect-full-website-t5gt.vercel.app'
   //origin:'http://localhost:3000'
@@ -21,7 +22,7 @@ app.use(cors({
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-// Create a connection pool to the MySQL database
+// Create a connection pool to the MySQL database and etc
 const pool = mysql.createPool({
   host: process.env.DB_HOST,      
   user: process.env.DB_USER,      
