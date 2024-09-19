@@ -14,8 +14,8 @@ const upload = multer({ storage: storage });
 const app = express();
 
 app.use(cors({
-  // origin: 'https://hrconnectcompany.netlify.app'
-  origin:'http://localhost:3000'
+   origin: 'https://hr-connect-full-website-t5gt.vercel.app/'
+  //origin:'http://localhost:3000'
 }));
 
 // Middleware to parse JSON bodies
