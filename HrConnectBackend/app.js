@@ -65,7 +65,7 @@ app.post("/signup/recruiter", async (req, res) => {
   signUpUser({ name, username, email, password, role: 'recruiter' }, res);
 });
 
-app.post('/login', async (req, res) => {
+app.post('login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
