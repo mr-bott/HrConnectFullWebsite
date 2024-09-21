@@ -12,13 +12,11 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 const app = express();
-let a="apple"
-console.log(a)
-app.use(cors({
-   origin: 'https://hr-connect-full-website-t5gt.vercel.app'
-  //origin:'http://localhost:3000'
-}));
 
+app.use(cors({
+  origin:process.env.Connect
+}));
+console.log(process.env.Connect)
 // Middleware to parse JSON bodies
 app.use(express.json());
 
@@ -125,7 +123,7 @@ app.get('/users/:id',  middle,async (req, res) => {
 });
 
 // route to update a user
-app.put('/users/:id', middle, async (req, res) => {
+app.put('/users/:id', async (req, res) => {
   const { id } = req.params;
   const { name, email } = req.body;
   try {
