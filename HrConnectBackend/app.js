@@ -64,7 +64,7 @@ app.post("/signup/recruiter", async (req, res) => {
   signUpUser({ name, username, email, password, role: 'recruiter' }, res);
 });
 
-app.post('login', async (req, res) => {
+app.post('/login', async (req, res) => {
   const { username, password } = req.body;
 
   try {
@@ -123,7 +123,7 @@ app.get('/users/:id',  middle,async (req, res) => {
 });
 
 // route to update a user
-app.put('/users/:id', async (req, res) => {
+app.put('/users/:id', middle,async (req, res) => {
   const { id } = req.params;
   const { name, email } = req.body;
   try {
